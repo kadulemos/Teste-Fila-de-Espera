@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Clínica Médica</title>
+		<link rel="icon" href="img/nurse.png" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h1><img src="img/medical-record.png" width="35px"></h1>
+				<h1 class='titulo'>Animati - Clínica Médica</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Pacientes</h2>
+				<label for="filtrar-tabela">Buscar Paciente:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Data de Nascimento</th>
+							<th>CPF</th>
+							<th>Atendimento</th>
+							<th>Data de Chegada</th>
+						</tr>
+					</thead>
+					<tbody id="tabela-pacientes">
+						<tr class="paciente" id="primeiro-paciente">
+							<td class="info-nome">Pedro</td>
+							<td class="info-nascimento">1960-05-04</td>
+							<td class="info-cpf">987.908.765-89</td>
+							<td class="info-atendimento">Prioritário</td>
+							<td class="info-chegada">2020-10-15</td>
+
+							<td class="info-chamar"> <a href="#openModal">Chamar</a>
+								<div id="openModal" class="modalDialog">
+								  <div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Chamar Paciente</h2>
+									<p>Aqui apareceria o nome do paciente</p>
+								  </div>
+								</div> 
+							</td>
+
+						</tr>
+
+						<tr class="paciente" >
+							<td class="info-nome">José</td>
+							<td class="info-nascimento">1986-09-30</td>
+							<td class="info-cpf">786.567.847-34</td>
+							<td class="info-atendimento">Normal</td>
+							<td class="info-chegada">2020-10-16</td>
+
+							<td class="info-chamar"> <a href="#openModal">Chamar</a>
+								<div id="openModal" class="modalDialog">
+								  <div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Chamar Paciente</h2>
+									<p>Aqui apareceria o nome do paciente</p>
+								  </div>
+								</div> 
+							</td>
+
+						</tr>
+					</tbody>
+				</table>
+				<!--Criação do botão para ordenar, mas sem a funcionalidade (teste)-->
+				<button id="ordenar-pacientes" class="botao bto-principal">Ordenar Pacientes</button>
+
+			</section>
+		</main>
+		<!-- Formulário para adicionar novos pacientes -->
+		<section class="container">
+			<h2 id="titulo-form">Adicionar novo paciente</h2>
+			<ul id="mensagens-erro"></ul>
+			<form id="form-adiciona">
+				<div class="grupo">
+					<label for="nome">Nome:</label>
+					<input id="nome" name="nome" type="text" placeholder="Digite o nome do paciente" class="campo">
+				</div>
+				<div class="grupo">
+					<label for="nascimento">Data de Nascimento:</label>
+					<input id="nascimento" name="nascimento" type="date" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="cpf">CPF</label>
+					<input id="cpf" name="cpf" type="text" placeholder="000.000.000-00" class="campo campo-medio">
+				</div>
+				<div class="grupo">
+					<label for="atendimento">Tipo de Atendimento:</label>
+					<select id="atendimento" name="atendimento">
+						<option value="Normal" selected>Normal</option>
+						<option value="Prioritário">Prioritário</option>
+					</select>
+				</div>
+				<div class="grupo">
+					<label for="chegada">Data de chegada:</label>
+					<input id="chegada" name="chegada" type="date" class="campo campo-medio">
+				</div>
+
+				<button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+			</form>
+		</section>
+		<script src="js/form.js"></script>
+		<script src="js/remover-paciente.js"></script>
+		<script src="js/filtra.js"></script>
+		<script src="js/ordenar-pacientes.js"></script>
+	</body>
+</html>
